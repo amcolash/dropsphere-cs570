@@ -1,21 +1,6 @@
 {
-  "name": "dropsphere-cs570",
-  "version": "0.1.0",
-  "homepage": "https://github.com/amcolash/dropsphere-cs570",
-  "authors": [
-    "Andrew McOlash <amcolash@gmail.com>"
-  ],
-  "description": "Simple testing version of a front-end for a chrome extension",
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.3.2"
-  }
+  "name": "dropsphere",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {}
 }
