@@ -1,20 +1,55 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="min-width:450px;">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css styles/main.css -->
         <link href="styles/main.css" rel="stylesheet">
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
         <!-- endbuild -->
     </head>
     <body>
-        <h1>'Allo, 'Allo!</h1>
+        <div class="container">
+          <div class="row">
+            <div id="login" class="hideMe">
+
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail" class="col-xs-2 control-label">Email</label>
+                  <div class="col-xs-10">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="inputPassword" class="col-xs-2 control-label">Password</label>
+                  <div class="col-xs-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-xs-offset-2 col-xs-10">
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+            <div id="feed" class="hideMe">
+              <h1>You are logged in!</h1>
+            </div>
+          </div>
+        </div>
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
