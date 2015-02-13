@@ -1,6 +1,6 @@
 /* Begin main styling */
 body {
-  padding: 10px;
+  padding: 10px 0;
   background-color: #eeeeee;
 }
 
@@ -8,9 +8,26 @@ body {
   height: 400px;
 }
 
+.contactImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: left;
+}
+
+.contactName {
+  text-align: right;
+}
+
 #contacts li {
   background-color: #e5e5e5;
+  border-radius: 3px;
   padding: 10px;
+  margin-bottom: 2px;
+}
+
+#contacts .row {
+  padding-right: 15px;
 }
 
 #chat .row {
@@ -65,6 +82,12 @@ hr {
   margin-bottom: 0;
   padding-top: 7px;
   text-align: right;
+}
+
+.center {
+  display:table-cell;
+  vertical-align:middle;
+  float:none;
 }
 
 /* End helper stuff */
