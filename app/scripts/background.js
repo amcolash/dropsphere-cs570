@@ -11,7 +11,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
 
 var i = 0;
 
-var loggedIn = false;
+var loggedIn = true;
 
 var interval;
 

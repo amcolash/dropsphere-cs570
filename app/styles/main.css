@@ -1,9 +1,63 @@
+/* Begin main styling */
 body {
-  padding: 20px;
+  padding: 10px;
+  background-color: #eeeeee;
 }
 
+#contacts, #chat, #links {
+  height: 400px;
+}
+
+#contacts li {
+  background-color: #e5e5e5;
+  padding: 10px;
+}
+
+#chat .row {
+  padding-left: 15px;
+}
+
+.messageLeft, .messageRight {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.messageLeft {
+  background-color: blue;
+  float: left;
+  clear: both;
+}
+
+.messageRight {
+  background-color: green;
+  float: right;
+  clear: both;
+}
+
+.bottom {
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+/* End main styling */
+
+
+/* Begin helper Stuff */
 .hideMe {
   display: none;
+}
+
+hr {
+  border-top: 1px solid #d9d9d9;
+}
+
+.borderRight {
+  border-right: 1px solid #d9d9d9;
+}
+
+.borderLeft {
+  border-left: 1px solid #d9d9d9;
 }
 
 /* Make all horizontal forms look the same */
@@ -12,3 +66,5 @@ body {
   padding-top: 7px;
   text-align: right;
 }
+
+/* End helper stuff */

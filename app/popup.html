@@ -1,5 +1,5 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="min-width:500px;">
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" style="min-width:450px;">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,39 +15,74 @@
         <!-- endbuild -->
     </head>
     <body>
-        <div class="container">
-          <div class="row">
-            <div id="login" class="hideMe">
+        <div class="container-fluid">
 
-              <form class="form-horizontal" data-toggle="validator">
-                <div class="form-group">
-                  <label for="inputEmail" class="col-xs-3 control-label">Email</label>
-                  <div class="col-xs-9">
-                    <input type="email" required autofocus class="form-control" id="inputEmail" placeholder="Email">
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
+          <div id="login" class="hideMe">
 
-                <div class="form-group">
-                  <label for="inputPassword" class="col-xs-3 control-label">Password</label>
-                  <div class="col-xs-9">
-                    <input type="password" required class="form-control" id="inputPassword" placeholder="Password">
-                    <div class="help-block with-errors"></div>
-                  </div>
+            <form class="form-horizontal" data-toggle="validator">
+              <div class="form-group">
+                <label for="inputEmail" class="col-xs-3 control-label">Email</label>
+                <div class="col-xs-9">
+                  <input type="email" required autofocus class="form-control" id="inputEmail" placeholder="Email">
+                  <div class="help-block with-errors"></div>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <div class="col-xs-offset-3 col-xs-9">
-                    <button type="submit" class="btn btn-default">Sign in</button>
-                  </div>
+              <div class="form-group">
+                <label for="inputPassword" class="col-xs-3 control-label">Password</label>
+                <div class="col-xs-9">
+                  <input type="password" required class="form-control" id="inputPassword" placeholder="Password">
+                  <div class="help-block with-errors"></div>
                 </div>
-              </form>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                  <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+
+          <div id="feed" class="hideMe">
+
+            <div id="contacts" class="col-xs-4">
+
+              <ul class="list-unstyled">
+                <li>Andrew</li>
+                <li>Vash</li>
+                <li>Brian</li>
+              </ul>
 
             </div>
-            <div id="feed" class="hideMe">
-              <h1>You are logged in!</h1>
-              <button id="logout" class="btn btn-danger">Log Out</button>
+
+            <div id="chat" class="col-xs-8 borderLeft">
+
+              <div id="chatbox" class="row">
+                <ul class="list-unstyled">
+                  <li class="messageLeft">Message</li>
+                  <br>
+                  <li class="messageRight">Message 2</li>
+                </ul>
+              </div>
+
+              <div class="bottom">
+                <input type="text">
+                <br>
+                Drop Me!
+              </div>
+
             </div>
+
+            <div id="links" class="col-xs-4 hideMe">
+              <h1>Links</h1>
+            </div>
+
+            <!-- <div class="row">
+              <button id="logout" class="btn btn-small btn-danger">Log Out</button>
+            </div> -->
+
           </div>
         </div>
 
