@@ -1,8 +1,9 @@
 {
   "name": "dropsphere",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "bootstrap-validator": "~0.7.2"
   },
   "devDependencies": {}
 }

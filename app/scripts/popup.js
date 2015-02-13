@@ -12,19 +12,22 @@ if (!background.loggedIn) {
   $('#feed').show();
 }
 
-$('form').submit(function() {
-  event.preventDefault();
-  console.log('trying to submit!');
-  var valid = true;
-  $('input').each(function () {
-    if (!$(this).val()) {
-      valid = false;
-      console.log('invalid, ' + this);
-    }
+$('form').validator().on('submit', function (e) {
+  e.preventDefault();
+
+  background.loggedIn = true;
+
+  $('input').each(function() {
+    $(this).val('');
   });
 
-  if (valid) {
-    $('#login').hide();
-    $('#feed').show();
-  }
+  $('#login').hide();
+  $('#feed').show();
+});
+
+$('#logout').click(function () {
+  background.loggedIn = false;
+
+  $('#login').show();
+  $('#feed').hide();
 });

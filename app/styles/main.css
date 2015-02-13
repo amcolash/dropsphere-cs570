@@ -5,3 +5,10 @@ body {
 .hideMe {
   display: none;
 }
+
+/* Make all horizontal forms look the same */
+.form-horizontal .control-label {
+  margin-bottom: 0;
+  padding-top: 7px;
+  text-align: right;
+}
