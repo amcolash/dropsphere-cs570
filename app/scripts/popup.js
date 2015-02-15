@@ -31,3 +31,9 @@ $('#logout').click(function () {
   $('#login').show();
   $('#feed').hide();
 });
+
+$('#contacts li').click(function() {
+  console.log(this);
+  $('#contacts li').removeClass('selected');
+  $(this).addClass('selected');
+});

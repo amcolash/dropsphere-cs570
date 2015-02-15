@@ -17,6 +17,32 @@
     <body>
         <div class="container-fluid">
 
+          <div id="title" class="row">
+            <div class="col-xs-12">
+              <div class="pull-left">
+                <span>Dropsphere</span>
+              </div>
+              <!-- <span id="settings" class="glyphicon glyphicon-cog pull-right" aria-hidden="true"></span> -->
+
+              <div class="dropdown pull-right hoverCursor">
+                <span class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                  Andrew
+                  <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                  <li role="presentation" class="divider"></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log Out</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <hr>
+
           <div id="login" class="hideMe">
 
             <form class="form-horizontal" data-toggle="validator">
@@ -48,6 +74,13 @@
           <div id="feed" class="hideMe">
 
             <div id="contacts" class="col-xs-4 borderRight">
+
+              <div class="row">
+                <button type="button" class="btn btn-block" aria-label="New Chat">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chat
+                </button>
+                <hr>
+              </div>
 
               <ul class="list-unstyled row">
                 <li>
@@ -101,6 +134,7 @@
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap-validator/dist/validator.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
