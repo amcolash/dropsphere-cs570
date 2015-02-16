@@ -37,3 +37,8 @@ $('#contacts li').click(function() {
   $('#contacts li').removeClass('selected');
   $(this).addClass('selected');
 });
+
+
+$('#dropPage').click(function(){
+  alert("Hit!");
+});
