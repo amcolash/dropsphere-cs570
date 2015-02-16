@@ -4,8 +4,19 @@ body {
   background-color: #f5f5f5;
 }
 
-#title {
-  font-size: 20px;
+#dropSphereLogo {
+  height: 56px;
+}
+
+#userImage {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  bottom: 8px;
+  right: 15px;
+  position: absolute;
 }
 
 #contacts, #chat, #links {
@@ -18,25 +29,33 @@ body {
 }
 
 .contactName {
-  padding-top: 10px;
+  padding-top: 7px;
   float: right;
+}
+
+#contacts ul {
+  overflow-y: scroll;
+  height: 320px;
 }
 
 #contacts li {
   background-color: #dedede;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 7px 0 10px 7px;
   cursor: pointer;
   transition: box-shadow .35s ease;
 }
 
-.btn-group-vertical label {
-  border-radius: 5px !important;
-}
-
 #contacts li.selected {
   box-shadow: 0px 0px 12px #337ab7;
+}
+
+#chatBox ul {
+  overflow-y: scroll;
+  height: 300px;
+  padding: 0 7px;
+  margin-bottom: 0;
 }
 
 .messageLeft, .messageRight {
@@ -73,6 +92,10 @@ body {
 
 hr {
   border-top: 1px solid #d9d9d9;
+}
+
+.specialHr {
+  margin-top: 10px;
 }
 
 .borderRight {
