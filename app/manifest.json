@@ -21,5 +21,8 @@
         },
         "default_title": "Dropsphere",
         "default_popup": "popup.html"
-    }
+    },
+    "permissions": [
+      "notifications"
+    ]
 }

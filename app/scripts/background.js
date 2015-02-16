@@ -9,24 +9,24 @@ chrome.runtime.onInstalled.addListener(function (details) {
 // Sets a badge for the app - like a notification
 //chrome.browserAction.setBadgeText({text: '\'Allo'});
 
-var i = 0;
-
 var loggedIn = true;
 
-var interval;
-
 function abc() {
-  chrome.browserAction.setBadgeText({text: '' + i});
-  i = (i + 1);
+  chrome.browserAction.setBadgeText({text: 'Yay!'});
 
-  if (i > 10) {
-    clearInterval(interval);
-    //loggedIn = true;
-  }
+  var opt = {
+    type: 'basic',
+    title: 'Here is a notification',
+    message: 'This is a test notification',
+    iconUrl: 'images/icon-128.png'
+  };
+
+  // Then show the notification.
+  chrome.notifications.create('abc', opt, function() {
+    console.error(chrome.runtime.lastError);
+  });
 }
 
 abc();
-
-interval = setInterval(abc, 1000);
 
 console.log('\'Allo \'Allo! Event Page for Browser Action');
