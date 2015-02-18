@@ -6,13 +6,13 @@ console.log('\'Allo \'Allo! Popup');
 
 var background = chrome.extension.getBackgroundPage();
 
-if (!background.loggedIn) {
+if(!background.loggedIn){
   $('#login').show();
-} else {
+}else{
   $('#feed').show();
 }
 
-$('form').validator().on('submit', function (e) {
+$('form').validator().on('submit', function (e){
   e.preventDefault();
 
   background.loggedIn = true;
@@ -25,20 +25,24 @@ $('form').validator().on('submit', function (e) {
   $('#feed').show();
 });
 
-$('#logout').click(function () {
+$('#logout').click(function(){
   background.loggedIn = false;
-
   $('#login').show();
   $('#feed').hide();
 });
 
-$('#contacts li').click(function() {
-  console.log(this);
+$('#contacts li').click(function(){
+  var contact = $(this).children('.contactName').html(); 
   $('#contacts li').removeClass('selected');
+  $('#currentContactName').html(contact);
   $(this).addClass('selected');
 });
 
 
 $('#dropPage').click(function(){
-  alert("Hit!");
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, "drop", function(response){
+       $("#chatBox ul").append("<li class='messageRight'><a target='_blank' href= '" + response.link + " '>" + response.title + "</a></li>");
+    });
+  });
 });
