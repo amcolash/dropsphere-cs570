@@ -18,7 +18,7 @@ if(!background.loggedIn){
     height: '350px'
   });
 
-  $('#chatbox').slimScroll({
+  $('#chatBox').slimScroll({
     height: '310px'
   });
 
@@ -44,7 +44,7 @@ $('#logout').click(function(){
 });
 
 $('#contacts li').click(function(){
-  var contact = $(this).children('.contactName').html(); 
+  var contact = $(this).children('.contactName').html();
   $('#contacts li').removeClass('selected');
   $('#currentContactName').html(contact);
   $(this).addClass('selected');
@@ -55,7 +55,7 @@ $('#dropPage').click(function(){
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
         console.log(response);
-        $('#chatbox').append('<li class="messageRight"><a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
+        $('#chatBox').append('<li class="messageRight"><a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
     });
   });
 });

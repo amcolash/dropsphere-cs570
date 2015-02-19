@@ -6,9 +6,12 @@ body {
   max-height: 495px !important;
 }
 
-
 #dropSphereLogo {
   height: 56px;
+}
+
+#newChat {
+  padding-top: 8px;
 }
 
 #userImage {
@@ -24,11 +27,10 @@ body {
 
 #contacts, #chat {
   height: 400px;
-  padding: 0 5px;
 }
 
-#chatbox {
-  padding-right: 3px;
+#chatBox {
+  padding: 8px;
 }
 
 .bottom {
@@ -96,6 +98,10 @@ body {
   clear: both;
 }
 
+.bottom {
+  padding: 10px 7px 7px 7px;
+}
+
 #dropContent {
   margin-bottom: 10px;
 }
@@ -146,12 +152,6 @@ ul {
   display:table-cell;
   vertical-align:middle;
   float:none;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
 .container-fluid {
