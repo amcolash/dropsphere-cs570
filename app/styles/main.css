@@ -2,11 +2,10 @@
 body {
   background-color: #f5f5f5;
   padding: 2px;
+  min-width: 500px;
+  max-height: 495px !important;
 }
 
-#title {
-  padding: 0 10px;
-}
 
 #dropSphereLogo {
   height: 56px;

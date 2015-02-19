@@ -14,6 +14,14 @@ $(function() {
     $('#feed').show();
   }
 
+  $('#contactList').slimScroll({
+    height: '350px'
+  });
+
+  $('#chatbox').slimScroll({
+    height: '310px'
+  });
+
   $('form').validator().on('submit', function (e){
     e.preventDefault();
 
@@ -25,14 +33,6 @@ $(function() {
 
     $('#login').hide();
     $('#feed').show();
-  });
-
-  $('#contactList').slimScroll({
-    height: '350px'
-  });
-
-  $('#chatbox').slimScroll({
-    height: '310px'
   });
 
   $('.slimScrollBar').hide();
@@ -54,7 +54,8 @@ $(function() {
   $('#dropPage').click(function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
-         $('#chatBox ul').append('<li class="messageRight"><a target="_blank" href= "' + response.link + '>' + response.title + '</a></li>');
+        console.log(response);
+        $('#chatbox').append('<li class="messageRight"><a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
       });
     });
   });
