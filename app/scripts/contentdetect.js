@@ -5,5 +5,17 @@ chrome.runtime.onMessage.addListener(
                 "from the extension");
     if (request == "drop")
 
-      sendResponse({link: document.URL, title: document.title});
+      sendResponse({link: document.URL, title: document.title, description: getMetaContent("description")});
   });
+
+
+
+function getMetaContent(propName){
+    var metas = document.getElementsByTagName('meta');
+    for (i = 0; i < metas.length; i++){
+        if (metas[i].getAttribute("name") == propName) {
+            return metas[i].getAttribute("content");
+        }
+    }
+    return "";
+}
