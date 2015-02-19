@@ -2,47 +2,61 @@
 
 'use strict';
 
-console.log('\'Allo \'Allo! Popup');
+$(function() {
 
-var background = chrome.extension.getBackgroundPage();
+  console.log('\'Allo \'Allo! Popup');
 
-if(!background.loggedIn){
-  $('#login').show();
-}else{
-  $('#feed').show();
-}
+  var background = chrome.extension.getBackgroundPage();
 
-$('form').validator().on('submit', function (e){
-  e.preventDefault();
+  if (!background.loggedIn) {
+    $('#login').show();
+  } else {
+    $('#feed').show();
+  }
 
-  background.loggedIn = true;
+  $('form').validator().on('submit', function (e){
+    e.preventDefault();
 
-  $('input').each(function() {
-    $(this).val('');
+    background.loggedIn = true;
+
+    $('input').each(function() {
+      $(this).val('');
+    });
+
+    $('#login').hide();
+    $('#feed').show();
   });
 
-  $('#login').hide();
-  $('#feed').show();
-});
+  $('#contactList').slimScroll({
+    height: '350px'
+  });
 
-$('#logout').click(function(){
-  background.loggedIn = false;
-  $('#login').show();
-  $('#feed').hide();
-});
+  $('#chatbox').slimScroll({
+    height: '310px'
+  });
 
-$('#contacts li').click(function(){
-  var contact = $(this).children('.contactName').html(); 
-  $('#contacts li').removeClass('selected');
-  $('#currentContactName').html(contact);
-  $(this).addClass('selected');
-});
+  $('.slimScrollBar').hide();
+
+  $('#logout').click(function(){
+    background.loggedIn = false;
+    $('#login').show();
+    $('#feed').hide();
+  });
+
+  $('#contacts li').click(function(){
+    var contact = $(this).children('.contactName').html();
+    $('#contacts li').removeClass('selected');
+    $('#currentContactName').html(contact);
+    $(this).addClass('selected');
+  });
 
 
-$('#dropPage').click(function(){
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, "drop", function(response){
-       $("#chatBox ul").append("<li class='messageRight'><a target='_blank' href= '" + response.link + " '>" + response.title + "</a></li>");
+  $('#dropPage').click(function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
+         $('#chatBox ul').append('<li class="messageRight"><a target="_blank" href= "' + response.link + '>' + response.title + '</a></li>');
+      });
     });
   });
+
 });

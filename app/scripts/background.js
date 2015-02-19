@@ -11,22 +11,20 @@ chrome.runtime.onInstalled.addListener(function (details) {
 
 var loggedIn = true;
 
-function abc() {
-  chrome.browserAction.setBadgeText({text: 'Yay!'});
+/*
+chrome.browserAction.setBadgeText({text: 'Yay!'});
 
-  var opt = {
-    type: 'basic',
-    title: 'Here is a notification',
-    message: 'This is a test notification',
-    iconUrl: 'images/icon-128.png'
-  };
+var opt = {
+  type: 'basic',
+  title: 'Here is a notification',
+  message: 'This is a test notification',
+  iconUrl: 'images/icon-128.png'
+};
 
-  // Then show the notification.
-  chrome.notifications.create('abc', opt, function() {
-    console.error(chrome.runtime.lastError);
-  });
-}
-
-abc();
+Then show the notification.
+chrome.notifications.create('abc', opt, function() {
+  console.error(chrome.runtime.lastError);
+});
+*/
 
 console.log('\'Allo \'Allo! Event Page for Browser Action');
