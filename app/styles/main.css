@@ -8,7 +8,7 @@ body {
 
 #title {
   padding-top: 5px;
-  background-color: #ddd;
+  background-color: #eaeaea;
 }
 
 #dropSphereLogo {
@@ -32,10 +32,6 @@ body {
 
 #chatBox {
   padding: 0 8px;
-}
-
-.bottom {
-  padding-right: 12px;
 }
 
 .contactImage {
@@ -104,19 +100,18 @@ body {
   text-align: right;
 }
 
-.bottom {
-  padding: 10px 7px 7px 9px;
-  background-color: #cccccc;
-}
-
-#dropContent {
-  margin-bottom: 10px;
-}
-
 /* End main styling */
 
 
 /* Begin helper Stuff */
+
+.modal-content {
+  padding: 12px;
+}
+
+.marginRight {
+  margin-right: 10px;
+}
 
 .noRound {
   border-radius: 0;

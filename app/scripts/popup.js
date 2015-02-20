@@ -19,7 +19,7 @@ $(function() {
   });
 
   $('#chatBox').slimScroll({
-    height: '310px'
+    height: '337px'
   });
 
   $('.slimScrollBar').hide();
@@ -40,6 +40,10 @@ $(function() {
 
     $('#login').hide();
     $('#feed').show();
+  });
+
+  $('#new').click(function() {
+    $(this).parent().html('<input class="form-control" type="text">');
   });
 
   $('#logout').click(function(){

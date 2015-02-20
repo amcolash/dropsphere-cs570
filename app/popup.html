@@ -75,9 +75,10 @@
             <div id="contacts" class="col-xs-4">
 
               <div id="newChat">
-                <button type="button" class="btn btn-block btn-primary noRound" aria-label="New Chat">
+                <!-- <button id="new" type="button" class="btn btn-block btn-primary noRound">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chat
-                </button>
+                </button> -->
+                <input type="text" class="form-control noRound" placeholder="New Chat">
               </div>
 
               <ul id="contactList" class="list-unstyled">
@@ -144,7 +145,7 @@
               </ul>
 
               <div class="bottom">
-                <input type="text" class="form-control" id="dropContent" placeholder="Say something! (Press enter to send)">
+                <input type="text" class="form-control noRound" id="dropContent" placeholder="Say something! (Press enter to send)">
                 <button id="dropPage" class="btn btn-primary col-xs-7 noRound">Drop Current Page</button>
                 <button id="filterLinks" class="btn btn-primary col-xs-5 noRound">Filter Links</button>
                 <div class="clearfix"></div>
@@ -159,6 +160,20 @@
             <!-- <div class="row">
               <button id="logout" class="btn btn-small btn-danger">Log Out</button>
             </div> -->
+
+            <!-- Small modal -->
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  Enter contact name(s): <input class="form-control" type="text">
+                  <br>
+                  <button class="btn btn-danger noRound pull-right">Cancel</button>
+                  <button class="btn btn-success noRound pull-right marginRight">Conirm</button>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
