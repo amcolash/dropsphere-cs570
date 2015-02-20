@@ -59,13 +59,13 @@ $(function() {
   $('#dropPage').click(function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
-          console.log(response);
-          $('#chatBox').append('<li class="messageRight"><a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
+          var img = '<img src="'+ response.image + '"/>'; 
+
+          $('#chatBox').append('<li class="messageRight">' + img + '<a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
 
           var scrollTo = $('#chatBox').prop('scrollHeight') + 'px';
           $('#chatBox').slimScroll({ scrollTo : scrollTo });
       });
     });
   });
-
 });

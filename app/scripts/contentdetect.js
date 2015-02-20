@@ -4,8 +4,8 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request == "drop")
-
-      sendResponse({link: document.URL, title: document.title, description: getMetaContent("description")});
+      var url = document.URL;
+      sendResponse({link: url, title: document.title, description: getMetaContent("description"), image: getImage(url)});
   });
 
 
@@ -18,4 +18,38 @@ function getMetaContent(propName){
         }
     }
     return "";
+}
+
+function getContentByMetaTagName(c){
+        for (var b = document.getElementsByTagName('meta'), a = 0; a < b.length; a++){
+          if (c == b[a].name || c == b[a].getAttribute('property')) { return b[a].content; }
+        } return false;
+ }
+
+function getImage(url){
+ 	var thumbnail = '';
+
+  	var suffix = /[^.]+$/.exec(url);
+
+  	if(suffix == 'jpg' || suffix == 'jpeg' || suffix == 'gif' || suffix == 'png'){
+     	image = url;
+     	title = ''; 
+  	}
+
+  	thumbnail = getContentByMetaTagName('og:image');
+
+  	if(!thumbnail){
+     	var imgs = document.images;
+     	for(var i =0; i < imgs.length; i++){
+        	img = imgs[i];
+        if(img.height > 40 && img.width > 40){
+            thumbnail = img.src;
+            return thumbnail; 
+        } 
+     }
+    }else{
+  		return thumbnail;
+  	}
+
+  	return "";
 }
