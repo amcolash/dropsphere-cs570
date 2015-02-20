@@ -42,8 +42,6 @@
             </div>
           </div>
 
-          <hr class="specialHr">
-
           <div id="login" class="hideMe">
 
             <form class="form-horizontal" data-toggle="validator">
@@ -77,10 +75,9 @@
             <div id="contacts" class="col-xs-4">
 
               <div id="newChat">
-                <button type="button" class="btn btn-block" aria-label="New Chat">
+                <button type="button" class="btn btn-block btn-primary noRound" aria-label="New Chat">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Chat
                 </button>
-                <hr>
               </div>
 
               <ul id="contactList" class="list-unstyled">
@@ -147,8 +144,10 @@
               </ul>
 
               <div class="bottom">
-                <input type="text" class="form-control" id="dropContent" placeholder="Send something!">
-                <button id="dropPage" class="btn btn-primary btn-block">Drop</button>
+                <input type="text" class="form-control" id="dropContent" placeholder="Say something! (Press enter to send)">
+                <button id="dropPage" class="btn btn-primary col-xs-7 noRound">Drop Current Page</button>
+                <button id="filterLinks" class="btn btn-primary col-xs-5 noRound">Filter Links</button>
+                <div class="clearfix"></div>
               </div>
 
             </div>
