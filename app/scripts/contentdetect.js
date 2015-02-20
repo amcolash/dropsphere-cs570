@@ -42,7 +42,7 @@ function getImage(url){
      	var imgs = document.images;
      	for(var i =0; i < imgs.length; i++){
         	img = imgs[i];
-        if((img.height > 40 && img.width > 40) && (img.height < 250 && img.width < 250)){
+        if((img.height > 40 && img.width > 40) && (img.height < 350 && img.width < 350)){
             thumbnail = img.src;
             return thumbnail; 
         } 
