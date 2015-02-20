@@ -6,12 +6,13 @@ body {
   max-height: 495px !important;
 }
 
-#dropSphereLogo {
-  height: 56px;
+#title {
+  padding-top: 5px;
+  background-color: #ddd;
 }
 
-#newChat {
-  padding-top: 8px;
+#dropSphereLogo {
+  height: 56px;
 }
 
 #userImage {
@@ -30,7 +31,7 @@ body {
 }
 
 #chatBox {
-  padding: 8px;
+  padding: 0 8px;
 }
 
 .bottom {
@@ -68,7 +69,8 @@ body {
 
 #contacts li.selected {
   /*box-shadow: 0px 0px 12px #337ab7;*/
-  background-color: #337ab7;
+  background-color: #5fa0cc;
+  color: #f0f0f0;
 }
 
 #chatBox ul {
@@ -82,24 +84,29 @@ body {
   padding: 10px;
   border-radius: 7px;
   margin-bottom: 10px;
-  color: #dddddd;
+  color: #f0f0f0;
   max-width: 90%;
+  min-width: 10%;
+  word-wrap: break-word;
 }
 
 .messageLeft {
   background-color: #337ab7;
   float: left;
   clear: both;
+  text-align: right;
 }
 
 .messageRight {
   background-color: #5cb85c;
   float: right;
   clear: both;
+  text-align: right;
 }
 
 .bottom {
-  padding: 10px 7px 7px 7px;
+  padding: 10px 7px 7px 9px;
+  background-color: #cccccc;
 }
 
 #dropContent {
@@ -110,6 +117,10 @@ body {
 
 
 /* Begin helper Stuff */
+
+.noRound {
+  border-radius: 0;
+}
 
 .hideMe {
   display: none;

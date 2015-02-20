@@ -15,7 +15,7 @@ $(function() {
   }
 
   $('#contactList').slimScroll({
-    height: '350px'
+    height: '371px'
   });
 
   $('#chatBox').slimScroll({
@@ -59,7 +59,7 @@ $(function() {
   $('#dropPage').click(function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
-          var img = '<img src="'+ response.image + '"/>'; 
+          var img = '<img class="img-responsive" src="'+ response.image + '"/>';
 
           $('#chatBox').append('<li class="messageRight">' + img + '<a target="_blank" href="' + response.link + '">' + response.title + '</a></li>');
 
