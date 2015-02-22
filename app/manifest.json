@@ -10,6 +10,7 @@
     "default_locale": "en",
     "background": {
         "scripts": [
+            "bower_components/socket.io-client/socket.io.js",
             "scripts/chromereload.js",
             "scripts/background.js"
         ]

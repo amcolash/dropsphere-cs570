@@ -8,8 +8,6 @@ chrome.runtime.onMessage.addListener(
       sendResponse({link: url, title: document.title, description: getMetaContent("description"), image: getImage(url)});
   });
 
-
-
 function getMetaContent(propName){
     var metas = document.getElementsByTagName('meta');
     for (i = 0; i < metas.length; i++){

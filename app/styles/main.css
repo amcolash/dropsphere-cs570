@@ -11,8 +11,8 @@ body {
   background-color: #eaeaea;
 }
 
-#dropSphereLogo {
-  height: 56px;
+#dropsphereLogo {
+  height: 45px;
 }
 
 #userImage {
@@ -84,10 +84,11 @@ body {
   max-width: 90%;
   min-width: 10%;
   word-wrap: break-word;
+  margin-top:3px;
 }
 
 .messageLeft {
-  background-color: #337ab7;
+  background-color: #ABDC9B;
   float: left;
   clear: both;
   text-align: right;
@@ -98,6 +99,11 @@ body {
   float: right;
   clear: both;
   text-align: right;
+}
+
+.linkItem img{
+  max-height: 50px;
+  float:left;
 }
 
 /* End main styling */
