@@ -32,14 +32,13 @@ $(function() {
 
 
   // add in contact list ////////////////////////////////////////////////////////////
-  var contacts = background.contacts;
+  var contacts = [];
 
-  if (contacts) {
-    contacts.forEach(function(contact){
-       var contactElement = '<span class="contactName">' + contact + '</span></li>';
-       $('#contactList').append('<li><img class="contactImage" src="images/user-128.png" alt="contact image">' + contactElement);
-    });
-  }
+  $("#contacts li").each(function(){
+      contacts.push($(this).children('.contactName').html());
+  })
+
+  background.initializeContacts(contacts);
 
   fillConvo(); // fill the messages in chatbox for current contact
 

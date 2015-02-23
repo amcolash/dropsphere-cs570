@@ -15,6 +15,8 @@ var storedChats = {};
 var currentConvo;
 
 
+
+/*
 var socket = io.connect('http://localhost:5000/');
 
 socket.on('connect', function () {
@@ -34,8 +36,16 @@ socket.on('sphereNames', function(names){
 
 function sendMsg(value){
 	socket.emit("message", value);
-}
+} */
 
+
+function initializeContacts(contacts){
+	currentConvo = contacts[0];
+	
+	contacts.forEach(function(contact){
+		storedChats[contact] = [];  	
+	});
+}
 
 function getConvo(name){
 	// switch the key to convo with new name if exists
