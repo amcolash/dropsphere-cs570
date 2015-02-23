@@ -9,10 +9,10 @@ chrome.runtime.onInstalled.addListener(function (details) {
 // Sets a badge for the app - like a notification
 //chrome.browserAction.setBadgeText({text: '\'Allo'});
 
-var loggedIn = true;
+var loggedIn = false;
 var contacts;
 var storedChats = {};
-var currentConvo; 
+var currentConvo;
 
 
 var socket = io.connect('http://localhost:5000/');
@@ -23,15 +23,15 @@ socket.on('connect', function () {
 });
 
 socket.on('sphereNames', function(names){
-	contacts = names; 
+	contacts = names;
 	currentConvo = names[0];
 
-	// add key value pairs for each name and it's chat 
+	// add key value pairs for each name and it's chat
 	names.forEach(function(name){
-		storedChats[name] = [];  	// change this to get actual data 
+		storedChats[name] = [];  	// change this to get actual data
 	});
 });
-  
+
 function sendMsg(value){
 	socket.emit("message", value);
 }
@@ -41,8 +41,8 @@ function getConvo(name){
 	// switch the key to convo with new name if exists
 	if(name){currentConvo = name;}
 
-	//  returns the messages for given user/group  
-	return storedChats[currentConvo] 
+	//  returns the messages for given user/group
+	return storedChats[currentConvo]
 }
 
 

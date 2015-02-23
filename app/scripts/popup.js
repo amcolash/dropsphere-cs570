@@ -8,12 +8,13 @@ $(function() {
 
   var background = chrome.extension.getBackgroundPage();
 
- 
+
 
   if(!background.loggedIn){
     $('#login').show();
   }else{
     $('#feed').show();
+    $('#user').removeClass('invisible');
   }
 
   $('#contactList').slimScroll({
@@ -33,36 +34,46 @@ $(function() {
   // add in contact list ////////////////////////////////////////////////////////////
   var contacts = background.contacts;
 
-  contacts.forEach(function(contact){
-     var contactElement = '<span class="contactName">' + contact + '</span></li>';
-     $('#contactList').append('<li><img class="contactImage" src="images/user-128.png" alt="contact image">' + contactElement);
-  });
+  if (contacts) {
+    contacts.forEach(function(contact){
+       var contactElement = '<span class="contactName">' + contact + '</span></li>';
+       $('#contactList').append('<li><img class="contactImage" src="images/user-128.png" alt="contact image">' + contactElement);
+    });
+  }
 
-
-  fillConvo(); // fill the messages in chatbox for current contact 
+  fillConvo(); // fill the messages in chatbox for current contact
 
  ////////////////////////////////////////////////////////////////////////////////////
 
-  $('form').validator().on('submit', function (e){
-    e.preventDefault();
+  // $('form').validator().on('submit', function (e){
+  //   e.preventDefault();
+  //
+  //   background.loggedIn = true;
+  //
+  //   $('input').each(function() {
+  //     $(this).val('');
+  //   });
+  //
+  //   $('#login').hide();
+  //   $('#feed').show();
+  // });
 
+  $('.login').click(function() {
     background.loggedIn = true;
 
-    $('input').each(function() {
+    $('#login input').each(function() {
       $(this).val('');
     });
 
     $('#login').hide();
     $('#feed').show();
-  });
-
-  $('#new').click(function() {
-    $(this).parent().html('<input class="form-control" type="text">');
+    $('#user').removeClass('invisible');
   });
 
   $('#logout').click(function(){
     background.loggedIn = false;
     $('#login').show();
+    $('#user').addClass('invisible');
     $('#feed').hide();
   });
 
@@ -79,7 +90,7 @@ $(function() {
   });
 
 
-  // shows dropped page in feed and sends to server 
+  // shows dropped page in feed and sends to server
   $('#dropPage').click(function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, 'drop', function(response){
@@ -97,7 +108,7 @@ $(function() {
 
 
 
-  // place message in chat and to server on enter 
+  // place message in chat and to server on enter
   $('#feed').on('keypress', 'input#dropContent', function(e){
 
         if(e.keyCode==13 && !e.shiftKey){
@@ -109,14 +120,16 @@ $(function() {
             background.sendMsg(msg);
             background.storeMessage(msgElement);
         }
-  }); 
+  });
 
   function fillConvo(name){
       var messages = background.getConvo(name);
       $('#chatBox').empty();
-      messages.forEach(function(msg){
-         $('#chatBox').append(msg);
-      });
+      if (messages) {
+        messages.forEach(function(msg){
+          $('#chatBox').append(msg);
+        });
+      }
   }
 
   function filterLinks(){
