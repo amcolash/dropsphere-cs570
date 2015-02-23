@@ -18,7 +18,7 @@ $(function() {
   }
 
   $('#contactList').slimScroll({
-    height: '368px'
+    height: '376px'
   });
 
   $('#chatBox').slimScroll({
