@@ -1,7 +1,7 @@
 /* Begin main styling */
 body {
   background-color: #f5f5f5;
-  padding: 2px;
+  padding: 3px;
   min-width: 525px;
   max-height: 495px !important;
 }
@@ -11,7 +11,7 @@ body {
 }
 
 #title {
-  padding-top: 5px;
+  padding: 5px 0;
   background-color: #eaeaea;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .dropdown {
-  bottom: 8px;
+  bottom: 3px;
   right: 15px;
   position: absolute;
 }
@@ -34,8 +34,16 @@ body {
   height: 400px;
 }
 
+#contacts {
+  background-color: #eaeaea;
+}
+
 #chatBox {
   padding: 0 8px;
+}
+
+#chat {
+  background-color: #f5f5f5;
 }
 
 .contactImage {
@@ -48,11 +56,6 @@ body {
   padding-left: 3px;
   /*float: right;*/
 }
-
-/*#contacts ul {
-  overflow-y: scroll;
-  height: 320px;
-}*/
 
 #contacts hr {
   margin-top: 10px;
@@ -108,6 +111,10 @@ body {
 .linkItem img{
   max-height: 50px;
   float:left;
+}
+
+.bottom {
+  margin: -5px -15px 0px -15px;
 }
 
 /* End main styling */
