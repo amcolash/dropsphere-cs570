@@ -1,3 +1,194 @@
+/* Begin main styling */
 body {
-  padding: 20px;
+  background-color: #f5f5f5;
+  padding: 3px;
+  min-width: 550px;
+  max-height: 495px;
 }
+
+#login {
+  padding-top: 15px;
+}
+
+#title {
+  padding: 5px 0;
+  background-color: #eaeaea;
+}
+
+#dropsphereLogo {
+  height: 45px;
+}
+
+#userImage {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  bottom: 3px;
+  right: 15px;
+  position: absolute;
+}
+
+#contacts {
+  background-color: #eaeaea;
+}
+
+#chatBox {
+  padding: 8px;
+}
+
+#chat {
+  background-color: #f5f5f5;
+}
+
+.contactImage {
+  width: 35px;
+  border-radius: 50%;
+}
+
+.contactName {
+  padding-top: 7px;
+  padding-left: 3px;
+  /*float: right;*/
+}
+
+#contacts.col-xs-4 {
+  padding: 0;
+}
+
+#contacts hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contacts li {
+  background-color: #dedede;
+  padding: 10px;
+  /*margin: 5px 0;*/
+  cursor: pointer;
+  transition: box-shadow .35s ease;
+}
+
+#contacts li.selected {
+  /*box-shadow: 0px 0px 12px #337ab7;*/
+  background-color: #5fa0cc;
+  color: #f0f0f0;
+}
+
+#chatBox ul {
+  overflow-y: scroll;
+  height: 300px;
+  padding: 0 7px;
+  margin-bottom: 0;
+}
+
+.messageLeft, .messageRight {
+  padding: 10px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  max-width: 90%;
+  min-width: 10%;
+  word-wrap: break-word;
+  margin-top:3px;
+}
+
+.messageLeft {
+  color: #f0f0f0;
+  background-color: #5482B6;
+  float: left;
+  clear: both;
+  text-align: right;
+}
+
+.messageRight {
+  color: #707070;
+  background-color: #D6DAE0;
+  float: right;
+  clear: both;
+  text-align: right;
+}
+
+.linkItem img{
+  max-height: 50px;
+  float:left;
+}
+
+.bottom {
+  margin: 5px -17px 0px -15px;
+}
+
+/* End main styling */
+
+
+/* Begin helper Stuff */
+
+.modal-content {
+  padding: 12px;
+}
+
+.marginRight {
+  margin-right: 10px;
+}
+
+.noRound {
+  border-radius: 0;
+}
+
+.hideMe {
+  display: none;
+}
+
+.invisible {
+  visibility: none;
+}
+
+hr {
+  border-top: 1px solid #d9d9d9;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+.specialHr {
+  margin-top: 10px;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+#feed.col-xs-4, #feed.col-xs-8 {
+  margin: 0;
+  padding: 0;
+}
+
+.hoverCursor:hover {
+  cursor: pointer;
+}
+
+/* Make all horizontal forms look the same */
+.form-horizontal .control-label {
+  margin-bottom: 0;
+  padding-top: 7px;
+  text-align: right;
+}
+
+.center {
+  display:table-cell;
+  vertical-align:middle;
+  float:none;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* Placeholder Center */
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+/* End helper stuff */
