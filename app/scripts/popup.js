@@ -36,7 +36,7 @@ $(function() {
 
   $("#contacts li").each(function(){
       contacts.push($(this).children('.contactName').html());
-  })
+  });
 
   background.initializeContacts(contacts);
 
@@ -76,8 +76,12 @@ $(function() {
     $('#feed').hide();
   });
 
-  $('#filterLinks').click(function(){
-    filterLinks();
+  $('#filterLinks input').change(function(){
+    if ($('#filterLinks input').prop('checked')) {
+      filterLinks(true);
+    } else {
+      filterLinks(false);
+    }
   });
 
 
@@ -113,14 +117,14 @@ $(function() {
         if(e.keyCode==13 && !e.shiftKey){
             e.preventDefault();
             var msg = $('#dropContent').val().trim();
-            
+
             if(msg){
               var msgElement  = '<li class="messageRight">' + msg + '</li> <br>';
               $('#chatBox').append(msgElement);
               $('#dropContent').val("");
               background.storeMessage(msgElement);
             }
-       
+
            // background.sendMsg(msg);
         }
   });
@@ -135,13 +139,16 @@ $(function() {
       }
   }
 
-  function filterLinks(){
+  function filterLinks(hide) {
     $('.messageRight').each(function(){
       if(!($(this).hasClass('linkItem'))){
-        $(this).hide();
+        if (hide) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
       }
-    })
-
+    });
   }
 
 });
