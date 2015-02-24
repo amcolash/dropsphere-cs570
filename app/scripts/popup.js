@@ -113,7 +113,7 @@ $(function() {
         if(e.keyCode==13 && !e.shiftKey){
             e.preventDefault();
             var msg = $('#dropContent').val().trim();
-            
+
             if(msg){
               var msgElement  = '<li class="messageRight">' + msg + '</li> <br>';
               $('#chatBox').append(msgElement);
@@ -140,7 +140,7 @@ $(function() {
       if(!($(this).hasClass('linkItem'))){
         $(this).hide();
       }
-    })
+    });
 
   }
 
