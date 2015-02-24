@@ -201,7 +201,7 @@ $(function() {
   function fakeResponse(){
     if(!convoSwitched && background.currentConvo != "Me"){
       var responses = ['Awesome!', 'Thats so cool!', 'meh', 'I want more!', 'Seen it already', 'That is so fetch!'];
-      var msg  = responses[Math.floor(Math.random() * (responses.length - 1)) + 0];
+      var msg  = responses[Math.floor(Math.random() * responses.length)];
       var msgElement  = '<li class="messageLeft">' + msg + '</li> <br>';
       $('#chatBox').append(msgElement);
       var scrollTo = $('#chatBox').prop('scrollHeight') + 'px';
