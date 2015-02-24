@@ -196,7 +196,7 @@ $(function() {
 
 
   function fakeResponse(){
-    if(!convoSwitched){
+    if(!convoSwitched && background.currentConvo != "Me"){
       var responses = ['Awesome!', 'Thats so cool!', 'meh', 'I want more!', 'Seen it already'];
       var msg  = responses[Math.floor(Math.random() * (responses.length - 1)) + 0];
       var msgElement  = '<li class="messageLeft">' + msg + '</li> <br>';
