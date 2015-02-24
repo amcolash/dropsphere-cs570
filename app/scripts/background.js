@@ -46,7 +46,7 @@ function initializeContacts(contacts){
 		currentConvo = contacts[0];
 
 		contacts.forEach(function(contact){
-			storedChats[contact] = [];  	
+			storedChats[contact] = [];
 		});
 	}
 }
@@ -61,7 +61,7 @@ function getConvo(name){
 	if(name){switchConvo(name);}
 
 	//  returns the messages for given user/group
-	return storedChats[currentConvo]
+	return storedChats[currentConvo];
 }
 
 

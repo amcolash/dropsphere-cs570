@@ -39,7 +39,9 @@ $(function() {
 
   background.initializeContacts(contacts);
 
-  fillConvo(); // fill the messages in chatbox for current contact
+  if (background.loggedIn) {
+    fillConvo(contacts[0]); // fill the messages in chatbox for current contact
+  }
 
  ////////////////////////////////////////////////////////////////////////////////////
 
@@ -168,6 +170,7 @@ $(function() {
   });
 
   function fillConvo(name){
+    console.log('fill convo ' + name);
       var messages = background.getConvo(name);
       $('#chatBox').empty();
       if (messages) {
