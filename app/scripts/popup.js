@@ -193,7 +193,7 @@ $(function() {
       }
     });
   }
- Untitled document
+
 
   function fakeResponse(){
     if(!convoSwitched && background.currentConvo != "Me"){
