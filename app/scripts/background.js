@@ -51,9 +51,14 @@ function initializeContacts(contacts){
 	}
 }
 
+
+function switchConvo(name){
+	currentConvo = name;
+}
+
 function getConvo(name){
 	// switch the key to convo with new name if exists
-	if(name){currentConvo = name;}
+	if(name){switchConvo(name);}
 
 	//  returns the messages for given user/group
 	return storedChats[currentConvo]

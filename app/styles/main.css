@@ -95,14 +95,14 @@ body {
 }
 
 .messageLeft {
-  background-color: #ABDC9B;
+  background-color: #5482B6;
   float: left;
   clear: both;
   text-align: right;
 }
 
 .messageRight {
-  background-color: #5cb85c;
+  background-color: #D6DAE0;
   float: right;
   clear: both;
   text-align: right;
