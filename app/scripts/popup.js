@@ -112,12 +112,16 @@ $(function() {
 
         if(e.keyCode==13 && !e.shiftKey){
             e.preventDefault();
-            var msg = $('#dropContent').val();
-            var msgElement  = '<li class="messageRight">' + msg + '</li> <br>';
-            $('#chatBox').append(msgElement);
-            $('#dropContent').val("");
-            background.sendMsg(msg);
-            background.storeMessage(msgElement);
+            var msg = $('#dropContent').val().trim();
+            
+            if(msg){
+              var msgElement  = '<li class="messageRight">' + msg + '</li> <br>';
+              $('#chatBox').append(msgElement);
+              $('#dropContent').val("");
+              background.storeMessage(msgElement);
+            }
+       
+           // background.sendMsg(msg);
         }
   });
 

@@ -40,11 +40,15 @@ function sendMsg(value){
 
 
 function initializeContacts(contacts){
-	currentConvo = contacts[0];
-	
-	contacts.forEach(function(contact){
-		storedChats[contact] = [];  	
-	});
+	var contactList = Object.keys(storedChats);
+
+	if(contactList.length == 0){
+		currentConvo = contacts[0];
+
+		contacts.forEach(function(contact){
+			storedChats[contact] = [];  	
+		});
+	}
 }
 
 function getConvo(name){
